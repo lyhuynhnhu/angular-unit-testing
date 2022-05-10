@@ -13,6 +13,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 @Component({
   selector: 'sign-in',
   templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
   userInfo = {
