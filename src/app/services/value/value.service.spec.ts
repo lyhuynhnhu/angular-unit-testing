@@ -16,6 +16,11 @@ describe('ValueService', () => {
     expect(service.getValue()).toBe('real value');
   });
 
+  it('#setValue should set correct value', () => {
+    service.setValue('changed value');
+    expect(service.getValue()).toBe('changed value');
+  });
+
   it('#getObservableValue should return value from observable', (done: DoneFn) => {
     service.getObservableValue().subscribe((value) => {
       expect(value).toBe('observable value');

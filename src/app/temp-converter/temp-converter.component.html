@@ -1,0 +1,35 @@
+<div class="counter-container">
+  <h1>Temparature Converter</h1>
+  <div class="row">
+    <p>Celsius to Fahrenheit (°C to °F)</p>
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Celsius (°C)"
+        name="celsius"
+        type="number"
+        #celsius
+        data-testid="celsius-input"
+      />
+    </mat-form-field>
+  </div>
+  <div class="row">
+    Your result is: {{ celsius.value | tempConverter: "F" }}
+  </div>
+  <div class="row">
+    <p>Fahrenheit to Celsius(°F to °C)</p>
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Fahrenheit (°F)"
+        name="fahrenheit"
+        type="number"
+        #fahrenheit
+        data-testid="fahrenheit-input"
+      />
+    </mat-form-field>
+  </div>
+  <div class="row">
+    Your result is: {{ fahrenheit.value | tempConverter: "C" }}
+  </div>
+</div>

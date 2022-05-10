@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+
+import { render, screen, fireEvent } from '@testing-library/angular';
+
 import { CounterComponent } from './counter.component';
 
 const startCount = 123;
@@ -106,5 +109,12 @@ describe('Counter Component', () => {
       By.css('[data-testid="count"]')
     );
     expect(countOutput.nativeElement.textContent).toBe(String(startCount));
+  });
+});
+
+describe('Counter Component With Testing Library', () => {
+  it('should render counter', async () => {
+    await render(CounterComponent);
+    expect(screen.getByText(/0/)).toBeDefined();
   });
 });

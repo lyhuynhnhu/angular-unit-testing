@@ -1,8 +1,32 @@
 <h1>User List:</h1>
-<mat-list class="user-list">
+<!-- <mat-list class="user-list">
   <mat-list-item *ngFor="let user of userList; let i = index"
     ><mat-icon mat-list-icon>person</mat-icon>
     <div mat-line>{{ user.name }}</div>
     <div mat-line>{{ user.role }}</div>
   </mat-list-item>
-</mat-list>
+</mat-list> -->
+<mat-grid-list class="user-list" cols="2">
+  <mat-grid-tile
+    ><mat-list
+      ><mat-list-item
+        *ngFor="let user of userList.slice(0, userList.length / 2)"
+        ><mat-icon mat-list-icon>person</mat-icon>
+        <div mat-line>{{ user.name }}</div>
+        <div mat-line>{{ user.role }}</div>
+      </mat-list-item>
+    </mat-list></mat-grid-tile
+  >
+  <mat-grid-tile
+    ><mat-list
+      ><mat-list-item
+        *ngFor="
+          let user of userList.slice(userList.length / 2, userList.length)
+        "
+        ><mat-icon mat-list-icon>person</mat-icon>
+        <div mat-line>{{ user.name }}</div>
+        <div mat-line>{{ user.role }}</div>
+      </mat-list-item>
+    </mat-list></mat-grid-tile
+  >
+</mat-grid-list>

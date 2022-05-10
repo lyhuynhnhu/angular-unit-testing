@@ -24,12 +24,17 @@ import { CounterComponent } from './components/counter/counter.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
+import { SharedModule } from './shared/shared.module';
+
 import { UsersService } from './services/users/users.service';
 import { ValueService } from './services/value/value.service';
 import { MasterService } from './services/master/master.service';
 import { UsersComponent } from './users/users.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TempConverterComponent } from './temp-converter/temp-converter.component';
+import { TempConverterPipe } from './shared/temp-converter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,12 +44,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
     CounterComponent,
     SignInComponent,
     DialogComponent,
+    NotFoundComponent,
+    TempConverterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    SharedModule,
     MatListModule,
     MatToolbarModule,
     MatSidenavModule,
