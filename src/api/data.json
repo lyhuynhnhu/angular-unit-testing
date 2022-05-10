@@ -9,6 +9,26 @@
       "id": "2",
       "name": "Bob",
       "role": "Developer"
+    },
+    {
+      "id": "3",
+      "name": "Cindy",
+      "role": "Designer"
+    },
+    {
+      "id": "4",
+      "name": "David",
+      "role": "Developer"
+    },
+    {
+      "id": "5",
+      "name": "Ellen",
+      "role": "Designer"
+    },
+    {
+      "id": "6",
+      "name": "Fantine",
+      "role": "Developer"
     }
   ]
 }

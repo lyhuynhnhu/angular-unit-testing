@@ -1,0 +1,82 @@
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8" mode="side" opened>
+    <img
+      class="avatar mat-elevation-z8"
+      src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/21_Angular-512.png"
+    />
+
+    <h4 class="name">Angular</h4>
+
+    <mat-divider></mat-divider>
+    <!-- <button mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span>Components</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Services</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span>Pipes</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span>Directives</span>
+    </button>
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button> -->
+
+    <mat-nav-list>
+      <mat-accordion>
+        <div *ngFor="let navItem of navList">
+          <div class="nav-head" *ngIf="navItem.pages.length === 0">
+            <a
+              class="nav-link menu-button"
+              [routerLink]="navItem.link"
+              [href]="navItem.link"
+              routerLinkActive="selected"
+            >
+              <span class="nav-link-text">{{ navItem.heading }}</span>
+            </a>
+          </div>
+
+          <mat-expansion-panel
+            *ngIf="navItem.pages.length > 0"
+            class="mat-elevation-z0"
+          >
+            <mat-expansion-panel-header
+              class="nav-head menu-button"
+              [expandedHeight]="'48px'"
+            >
+              <mat-panel-title class="">
+                <span class="">{{ navItem.heading }}</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="nav-section">
+              <div *ngFor="let navPage of navItem.pages" class="nav-item">
+                <a
+                  class="nav-link menu-button"
+                  [routerLink]="navPage.link"
+                  [href]="navPage.link"
+                  routerLinkActive="selected"
+                  >{{ navPage.title }}</a
+                >
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

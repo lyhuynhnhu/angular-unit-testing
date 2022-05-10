@@ -58,7 +58,7 @@ describe('UsersService Using Spy', () => {
     usersService.getAllUsers().subscribe({
       next: (users) => done.fail('An error occurred.'),
       error: (error) => {
-        expect(error.message).toContain(/404 error/i);
+        expect(error.message).toContain('404 Error');
         done();
       },
     });
@@ -86,18 +86,19 @@ describe('UserService Using Mock', () => {
   });
 
   describe('getAllUsers', () => {
-    let userList: User[];
+    // let userList: User[];
 
     beforeEach(() => {
       userService = TestBed.inject(UsersService);
     });
 
     it('should return all users at once', () => {
+      let responseUsers: User[] = [];
+
       userService.getAllUsers().subscribe({
-        next: (users) =>
-          expect(users)
-            .withContext('should return all users')
-            .toEqual(userList),
+        next: (users) => {
+          responseUsers = users;
+        },
         error: (error) => fail(error.message),
       });
 
@@ -105,22 +106,26 @@ describe('UserService Using Mock', () => {
       expect(userRequest.request.method).toEqual('GET');
 
       userRequest.flush(userList);
+      expect(responseUsers).toEqual(userList);
     });
 
     it('should return empty when no users are available', () => {
+      let responseUsers: User[] = [];
       userService.getAllUsers().subscribe({
-        next: (users) =>
-          expect(users.length)
-            .withContext('should have empty array')
-            .toEqual(0),
+        next: (users) => {
+          responseUsers = users;
+        },
         error: fail,
       });
 
       const userRequest = httpTestingController.expectOne(userService.usersUrl);
       userRequest.flush([]);
+      expect(responseUsers).toEqual([]);
     });
 
     it('should return correct userList even when being called multiple times', () => {
+      let responseUsers: User[] = [];
+
       userService.getAllUsers().subscribe();
       userService.getAllUsers().subscribe();
       userService.getAllUsers().subscribe({
