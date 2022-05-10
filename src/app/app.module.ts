@@ -30,6 +30,7 @@ import { MasterService } from './services/master/master.service';
 import { UsersComponent } from './users/users.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { HoverFocusComponent } from './hoverfocus/hoverfocus.spec';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     CounterComponent,
     SignInComponent,
     DialogComponent,
+    HoverFocusComponent,
   ],
   imports: [
     BrowserModule,
