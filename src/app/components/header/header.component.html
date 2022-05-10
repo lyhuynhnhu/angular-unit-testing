@@ -1,0 +1,36 @@
+<header>
+  <mat-toolbar fxLayout="row" class="app-header">
+    <a href="https://careers.positivethinking.tech/ptc-jobs/" fxFlex
+      ><img src="../../../assets/logo.png" height="50"
+    /></a>
+    <button mat-button *ngFor="let item of menuItems" fxHide.xs fxHide.sm>
+      <mat-icon class="mr">{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </button>
+    <button mat-button fxHide.xs fxHide.sm>
+      <app-welcome></app-welcome>
+    </button>
+
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="dropMenu"
+      fxHide
+      fxShow.xs
+      fxShow.sm
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+      <ng-container *ngFor="let item of menuItems">
+        <button mat-menu-item>
+          <mat-icon class="mr">{{ item.icon }}</mat-icon>
+          {{ item.label }}
+        </button>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <button mat-menu-item>
+        <app-welcome></app-welcome>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</header>
