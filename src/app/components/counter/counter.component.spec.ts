@@ -18,7 +18,6 @@ describe('Counter Component', () => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     component.startCount = startCount;
-    component.ngOnChanges();
     fixture.detectChanges();
   });
 
@@ -69,8 +68,8 @@ describe('Counter Component', () => {
     const resetInput = fixture.debugElement.query(
       By.css('[data-testid="reset-input"]')
     );
-    resetInput.nativeElement.value = '10';
 
+    resetInput.nativeElement.value = '10';
     // Dispatch input event
     resetInput.nativeElement.dispatchEvent(new Event('input'));
 

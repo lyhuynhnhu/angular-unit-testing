@@ -33,10 +33,10 @@ describe('AppComponent', () => {
     );
   });
 
-  it('renders an independent counter component', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const { debugElement } = fixture;
-    const counter = debugElement.query(By.css('app-counter'));
-    expect(counter).toBeTruthy();
-  });
+  // it('renders an independent counter component', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const { debugElement } = fixture;
+  //   const counter = debugElement.query(By.css('app-counter'));
+  //   expect(counter).toBeTruthy();
+  // });
 });

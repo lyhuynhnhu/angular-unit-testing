@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
 } from '@angular/core';
 
@@ -10,14 +11,14 @@ import {
   selector: 'app-counter',
   templateUrl: './counter.component.html',
 })
-export class CounterComponent implements OnChanges {
+export class CounterComponent implements OnInit {
   @Input() public startCount = 0;
 
   @Output() public countChange = new EventEmitter<number>();
 
   public count = 0;
 
-  public ngOnChanges(): void {
+  ngOnInit(): void {
     this.count = this.startCount;
   }
 
