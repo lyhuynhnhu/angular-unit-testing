@@ -1,0 +1,14 @@
+.counter-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .row {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .reset-btn {
+    cursor: pointer;
+    padding-left: 0.25rem;
+  }
+}

@@ -9,32 +9,68 @@ export class SidebarComponent implements OnInit {
   navList = [
     {
       heading: 'Components',
-      icon: 'dashboard',
       link: '/components',
       pages: [
         {
+          title: 'Basic Components',
+          link: '/components/basic',
+        },
+        {
           title: 'Components with Children',
-          link: '/settings/advanced',
-          icon: '',
+          link: '/components/ children',
         },
 
         {
           title: 'Forms',
-          link: '/settings/advanced',
-          icon: '',
+          link: '/components/form',
         },
         {
           title: 'Components depending on Services',
-          link: '/components/dependencies',
-          icon: '',
+          link: '/components/dependency',
         },
       ],
     },
     {
       heading: 'Services',
-      icon: 'settings',
-      link: '/settings',
-      pages: [],
+      link: '/services',
+      pages: [
+        {
+          title: 'Basic service',
+          link: '/services/basic',
+        },
+        {
+          title: 'Dependent service',
+          link: '/services/dependent',
+        },
+        {
+          title: 'HTTP service',
+          link: '/services/http',
+        },
+      ],
+    },
+    {
+      heading: 'Pipes',
+      link: '/pipes',
+      pages: [
+        {
+          title: 'Attribute Directives',
+          link: '/pipes/dependent',
+        },
+      ],
+    },
+    {
+      heading: 'Directives',
+      link: '/directives',
+      pages: [
+        {
+          title: 'Attribute Directives',
+          link: '/directives/attribute',
+        },
+        {
+          title: 'Structural Directives',
+          link: '/directives/structural',
+        },
+      ],
     },
   ];
   constructor() {}

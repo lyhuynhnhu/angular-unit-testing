@@ -1,0 +1,52 @@
+<div class="counter-container">
+  <h1>Counter</h1>
+  <div class="row">
+    <strong data-testid="count">{{ count }}</strong>
+  </div>
+
+  <div class="row">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="increment()"
+      data-testid="increment-button"
+    >
+      +
+    </button>
+
+    <button
+      mat-raised-button
+      color="secondary"
+      (click)="decrement()"
+      data-testid="decrement-button"
+    >
+      -
+    </button>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Type a number"
+        name="username"
+        type="number"
+        #resetInput
+        data-testid="reset-input"
+      />
+    </mat-form-field>
+    <!-- <button
+      mat-raised-button
+      (click)="reset(resetInput.value)"
+      data-testid="reset-button"
+    >
+      Reset
+    </button> -->
+    <mat-icon
+      (click)="reset(resetInput.value)"
+      data-testid="reset-button"
+      class="reset-btn"
+      >autorenew</mat-icon
+    >
+  </div>
+</div>

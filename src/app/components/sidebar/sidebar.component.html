@@ -1,36 +1,14 @@
 <mat-sidenav-container>
   <mat-sidenav class="mat-elevation-z8" mode="side" opened>
-    <img
-      class="avatar mat-elevation-z8"
-      src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/21_Angular-512.png"
-    />
+    <a href="/"
+      ><img
+        class="avatar mat-elevation-z8"
+        src="../../../assets/angular-white-transparent.svg"
+    /></a>
 
     <h4 class="name">Angular</h4>
 
     <mat-divider></mat-divider>
-    <!-- <button mat-button class="menu-button">
-      <mat-icon>home</mat-icon>
-      <span>Components</span>
-    </button>
-    <button mat-button class="menu-button">
-      <mat-icon>person</mat-icon>
-      <span>Services</span>
-    </button>
-    <button mat-button class="menu-button">
-      <mat-icon>info</mat-icon>
-      <span>Pipes</span>
-    </button>
-    <button mat-button class="menu-button">
-      <mat-icon>info</mat-icon>
-      <span>Directives</span>
-    </button>
-    <mat-divider></mat-divider>
-
-    <button mat-button class="menu-button">
-      <mat-icon>help</mat-icon>
-      <span>Help</span>
-    </button> -->
-
     <mat-nav-list>
       <mat-accordion>
         <div *ngFor="let navItem of navList">
@@ -38,7 +16,6 @@
             <a
               class="nav-link menu-button"
               [routerLink]="navItem.link"
-              [href]="navItem.link"
               routerLinkActive="selected"
             >
               <span class="nav-link-text">{{ navItem.heading }}</span>

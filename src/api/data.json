@@ -3,32 +3,53 @@
     {
       "id": "1",
       "name": "Alice",
-      "role": "Designer"
+      "role": "Senior Digital Designer"
     },
     {
       "id": "2",
       "name": "Bob",
-      "role": "Developer"
+      "role": "Senior Developer"
     },
     {
       "id": "3",
       "name": "Cindy",
-      "role": "Designer"
+      "role": "Junior Developer"
     },
     {
       "id": "4",
       "name": "David",
-      "role": "Developer"
+      "role": "Principal Product Owner"
     },
     {
       "id": "5",
       "name": "Ellen",
-      "role": "Designer"
+      "role": "Senior Automation QC"
     },
+
     {
       "id": "6",
       "name": "Fantine",
-      "role": "Developer"
+      "role": "Junior Developer"
+    },
+    {
+      "id": "7",
+      "name": "George",
+      "role": "Junior Developer"
+    },
+    {
+      "id": "8",
+      "name": "Hillary",
+      "role": "Junior Developer"
+    },
+    {
+      "id": "9",
+      "name": "Ian",
+      "role": "Junior Developer"
+    },
+    {
+      "id": "10",
+      "name": "Jen",
+      "role": "Junior Developer"
     }
   ]
 }
