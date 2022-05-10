@@ -21,8 +21,6 @@ export class SignInComponent implements OnInit {
     remember: true,
   };
 
-  @Output() changeTitleEvent: EventEmitter<string> = new EventEmitter();
-
   usernamePattern = /^[a-z]{6,32}$/i;
   passwordPattern = /^(?=.*[!@#$%^&*]+)[a-z0-9!@#$%^&*]{6,32}$/;
 
