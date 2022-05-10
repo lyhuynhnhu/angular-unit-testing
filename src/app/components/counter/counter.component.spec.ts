@@ -21,19 +21,8 @@ describe('Counter Component', () => {
     fixture.detectChanges();
   });
 
-  it('should render component correctly', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('shows the start count', () => {
-    const countOutput = fixture.debugElement.query(
-      By.css('[data-testid="count"]')
-    );
-    expect(countOutput.nativeElement.textContent).toBe(String(startCount));
-  });
-
   it('increments the count', () => {
-    // Find the increment button element in the DOM
+    // Query
     const incrementButton = fixture.debugElement.query(
       By.css('[data-testid="increment-button"]')
     );
@@ -43,9 +32,7 @@ describe('Counter Component', () => {
     fixture.detectChanges();
 
     // Assert
-    const countOutput = fixture.debugElement.query(
-      By.css('[data-testid="count"]')
-    );
+    const countOutput = fixture.debugElement.query(By.css('strong'));
     expect(countOutput.nativeElement.textContent).toBe(String(startCount + 1));
   });
 
@@ -102,6 +89,13 @@ describe('Counter Component', () => {
     fixture.detectChanges();
 
     // Assert
+    const countOutput = fixture.debugElement.query(
+      By.css('[data-testid="count"]')
+    );
+    expect(countOutput.nativeElement.textContent).toBe(String(startCount));
+  });
+
+  it('shows the start count', () => {
     const countOutput = fixture.debugElement.query(
       By.css('[data-testid="count"]')
     );
