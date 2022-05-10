@@ -18,7 +18,6 @@ describe('Counter Component', () => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     component.startCount = startCount;
-    // Call ngOnChanges, then re-render
     component.ngOnChanges();
     fixture.detectChanges();
   });
@@ -40,12 +39,11 @@ describe('Counter Component', () => {
       By.css('[data-testid="increment-button"]')
     );
 
-    // Act: Click on the increment button
+    // Act: Click on the increment button & Trigger the change
     incrementButton.triggerEventHandler('click', null);
-    // Trigger the change (Re-render the Component)
     fixture.detectChanges();
 
-    // Assert: Expect that the displayed count now reads “1”.
+    // Assert
     const countOutput = fixture.debugElement.query(
       By.css('[data-testid="count"]')
     );
