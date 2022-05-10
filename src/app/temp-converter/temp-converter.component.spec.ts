@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { render, screen, fireEvent } from '@testing-library/angular';
-
 import { SharedModule } from '../shared/shared.module';
 
 import { TempConverterComponent } from './temp-converter.component';
@@ -28,27 +26,33 @@ describe('TempConverterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('shou;d', () => {
+  it('should convert C to F', () => {
     const celsius = fixture.debugElement.query(
-      By.css('[data-testid="celsius"]')
+      By.css('[data-testid="celsius-input"]')
     );
-    // fireEvent.change(celsius.nativeElement, { target: { value: '30' } });
     celsius.nativeElement.value = '30';
-    // Dispatch input event
+
     celsius.nativeElement.dispatchEvent(new Event('input'));
-    expect(screen.getByText('sdfá')).toBeDefined();
+    fixture.detectChanges();
+
+    const celsiusResult = fixture.debugElement.query(
+      By.css('[data-testid="celsius-result"]')
+    );
+    expect(celsiusResult.nativeElement.textContent).toContain('86.00');
   });
-});
 
-describe('TempConverterComponent With Testing Library', () => {
-  it('should convert C to F', async () => {
-    await render(TempConverterComponent, {
-      imports: [SharedModule],
-    });
+  it('should convert F to C', () => {
+    const fahrenheit = fixture.debugElement.query(
+      By.css('[data-testid="fahrenheit-input"]')
+    );
+    fahrenheit.nativeElement.value = '86';
 
-    const celsius = screen.getByPlaceholderText(/celsius/i);
-    fireEvent.change(celsius, { target: { value: '30' } });
-    console.log(celsius);
-    // expect(celsius.).toBeDefined();
+    fahrenheit.nativeElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    const fahrenheitResult = fixture.debugElement.query(
+      By.css('[data-testid="fahrenheit-result"]')
+    );
+    expect(fahrenheitResult.nativeElement.textContent).toContain('30.00');
   });
 });

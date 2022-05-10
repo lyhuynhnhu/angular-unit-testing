@@ -53,7 +53,7 @@ export class SidebarComponent implements OnInit {
       link: '/pipes',
       pages: [
         {
-          title: 'Attribute Directives',
+          title: 'Basic Directives',
           link: '/pipes',
         },
       ],
