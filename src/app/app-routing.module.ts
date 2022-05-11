@@ -30,15 +30,6 @@ const routes: Routes = [
     children: [],
   },
   {
-    path: 'directives',
-    children: [
-      {
-        path: 'attribute',
-        component: HoverFocusComponent,
-      },
-    ],
-  },
-  {
     path: '**',
     component: WelcomeComponent,
     children: [],
